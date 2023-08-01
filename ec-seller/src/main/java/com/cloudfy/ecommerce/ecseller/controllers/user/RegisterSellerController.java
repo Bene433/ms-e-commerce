@@ -29,5 +29,4 @@ public class RegisterSellerController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(seller.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
-
 }
