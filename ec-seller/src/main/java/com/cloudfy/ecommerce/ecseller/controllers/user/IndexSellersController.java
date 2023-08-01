@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @RestController
 @RequestMapping(value = "/sellers")
-public class IndexUsersController {
+public class IndexSellersController {
 
     @Autowired
     private GetSellerService service;
