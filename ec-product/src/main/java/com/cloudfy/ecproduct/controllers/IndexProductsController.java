@@ -1,21 +1,29 @@
 package com.cloudfy.ecproduct.controllers;
 
 import com.cloudfy.ecproduct.models.entities.Product;
+import com.cloudfy.ecproduct.services.IndexProductsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 @RestController
 @RequestMapping(value = "/products")
 public class IndexProductsController {
 
-    @GetMapping
-    public ResponseEntity<Product> index(){
-        Product p1 = new Product(1L,"Headset Logitech g435", "Headset com fio",299.9, 50);
-        return ResponseEntity.ok().body(p1);
-    }
+    @Autowired
+    private IndexProductsService service;
 
+    @GetMapping
+    public ResponseEntity<List<Product>> index(){
+        List<Product> list = new ArrayList<>();
+        list = service.index();
+        return ResponseEntity.ok().body(list);
+    }
 }
