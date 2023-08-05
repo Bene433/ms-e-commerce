@@ -22,7 +22,7 @@ public class UpdateSellerService {
     public void updateData(Seller sellerUpdated, Seller data){
         sellerUpdated.setName(data.getName());
         sellerUpdated.setEmail(data.getEmail());
-        sellerUpdated.setCellphone(data.getCellphone());
+        sellerUpdated.setsellerKey(data.getsellerKey());
         sellerUpdated.setPassword(data.getPassword());
     }
 
@@ -32,6 +32,6 @@ public class UpdateSellerService {
     }
 
     public Seller fromDTO(SellerDTO sellerDTO){
-        return new Seller(sellerDTO.getId(), sellerDTO.getName(), sellerDTO.getEmail(), sellerDTO.getCellphone(), sellerDTO.getPassword());
+        return new Seller(sellerDTO.getId(), sellerDTO.getName(), sellerDTO.getEmail(), sellerDTO.getsellerKey(), sellerDTO.getPassword());
     }
 }

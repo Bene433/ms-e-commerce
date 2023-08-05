@@ -17,6 +17,6 @@ public class RegisterSellerService {
     }
 
     public Seller fromDTO(SellerDTO dataDTO){
-        return new Seller(dataDTO.getId(), dataDTO.getName(), dataDTO.getEmail(), dataDTO.getCellphone(), dataDTO.getPassword());
+        return new Seller(dataDTO.getId(), dataDTO.getName(), dataDTO.getEmail(), dataDTO.getsellerKey(), dataDTO.getPassword());
     }
 }

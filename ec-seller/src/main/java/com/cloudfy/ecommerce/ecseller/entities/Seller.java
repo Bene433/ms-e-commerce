@@ -14,18 +14,18 @@ public class Seller implements Serializable {
     private Long id;
     private String name;
     private String email;
-    private String cellphone;
+    private String sellerKey;
     private String password;
 
     //Constructor without parameters
     public Seller() {}
 
     //Constructor with parameters
-    public Seller(Long id, String name, String email, String cellphone, String password) {
+    public Seller(Long id, String name, String email, String sellerKey, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
-        this.cellphone = cellphone;
+        this.sellerKey = sellerKey;
         this.password = password;
     }
 
@@ -54,12 +54,12 @@ public class Seller implements Serializable {
         this.email = email;
     }
 
-    public String getCellphone() {
-        return cellphone;
+    public String getsellerKey() {
+        return sellerKey;
     }
 
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public void setsellerKey(String key) {
+        this.sellerKey = sellerKey;
     }
 
     public String getPassword() {
