@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ec-customer
+  config:
+    import: "configserver:"
+  profiles:
+    active: test
+#Server config
+server:
+  port: 8001
+#Eureka config
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka

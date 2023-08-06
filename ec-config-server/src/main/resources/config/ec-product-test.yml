@@ -1,6 +1,6 @@
 #Server config
 server:
-  port: 8003
+  port: 8002
 #Database config
 spring:
   datasource:
