@@ -21,8 +21,7 @@ public class RegisterProductController {
 
     @PostMapping
     public ResponseEntity<Product> registerProduct(@RequestBody ProductDTO productDTO){
-        Product product = service.fromDTO(productDTO);
-        product = service.register(product);
+        Product product = service.register(productDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(product.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }

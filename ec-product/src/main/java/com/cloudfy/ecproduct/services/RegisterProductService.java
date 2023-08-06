@@ -12,8 +12,9 @@ public class RegisterProductService {
     @Autowired
     private ProductRepository repository;
 
-    public Product register(Product data){
-        return repository.save(data);
+    public Product register(ProductDTO data){
+        Product product = fromDTO(data);
+        return repository.save(product);
     }
 
     public Product fromDTO(ProductDTO dataDTO){
