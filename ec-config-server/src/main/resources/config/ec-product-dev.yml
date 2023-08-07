@@ -1,0 +1,20 @@
+#Database config
+spring:
+  jpa:
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: create
+              create-target: create.sql
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_ec_product
+    username: postgres
+    password: 62312898
