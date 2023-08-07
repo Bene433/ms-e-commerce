@@ -15,6 +15,7 @@ public class UpdateSellerService {
     public Seller update(Seller data){
         Seller sellerUpdated = findById(data.getId());
         updateData(sellerUpdated, data);
+
         return repository.save(sellerUpdated);
 
     }
