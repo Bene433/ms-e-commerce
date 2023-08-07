@@ -13,7 +13,7 @@ import java.util.List;
 
 @Controller
 @RestController
-@RequestMapping(value = "/products")
+@RequestMapping(value = "/product/index")
 public class IndexProductsController {
 
     @Autowired

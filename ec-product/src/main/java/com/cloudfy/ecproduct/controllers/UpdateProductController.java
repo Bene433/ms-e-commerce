@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RestController
-@RequestMapping("/update/product")
+@RequestMapping("/product/update")
 public class UpdateProductController {
 
     @Autowired

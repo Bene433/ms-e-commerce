@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ec-api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: ec-product
+          uri: lb://ec-product
+          predicates:
+            - Path=/product/**
+#Server config
+server:
+  port: 7000
+#Eureka client
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
