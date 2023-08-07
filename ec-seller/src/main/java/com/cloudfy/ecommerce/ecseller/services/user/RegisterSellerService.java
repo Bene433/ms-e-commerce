@@ -12,8 +12,9 @@ public class RegisterSellerService {
     @Autowired
     private SellerRepository repository;
 
-    public Seller register(Seller data){
-        return repository.save(data);
+    public Seller register(SellerDTO data){
+        Seller seller = fromDTO(data);
+        return repository.save(seller);
     }
 
     public Seller fromDTO(SellerDTO dataDTO){

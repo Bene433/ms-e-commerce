@@ -24,8 +24,7 @@ public class RegisterSellerController {
 
     @PostMapping
     public ResponseEntity<Seller> registerSeller(@RequestBody SellerDTO dataDTO){
-        Seller seller = service.fromDTO(dataDTO);
-        seller = service.register(seller);
+        Seller seller = service.register(dataDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(seller.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
