@@ -11,6 +11,10 @@ spring:
           uri: lb://ec-product
           predicates:
             - Path=/product/**
+        - id: ec-customer
+          uri: lb://ec-customer
+          predicates:
+            - Path=/customer/**
 #Server config
 server:
   port: 7000
