@@ -4,7 +4,7 @@ spring:
   config:
     import: "configserver:"
   profiles:
-    active: test
+    active: dev
 #Server config
 server:
   port: ${PORT:0}

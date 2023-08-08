@@ -19,6 +19,10 @@ spring:
           uri: lb://ec-seller
           predicates:
             - Path=/seller/**
+        - id: ec-shopping-cart
+          uri: lb://ec-shopping-cart
+          predicates:
+            - Path=/order/**
 #Server config
 server:
   port: 7000
