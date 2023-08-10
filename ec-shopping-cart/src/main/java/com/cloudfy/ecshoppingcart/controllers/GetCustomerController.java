@@ -20,8 +20,8 @@ public class GetCustomerController {
     private GetCustomerByIdService service;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Customer> getCustomer(@PathVariable Long id){
+    public Customer getCustomer(@PathVariable Long id){
         Customer customer = service.getCustomer(id);
-        return ResponseEntity.ok().body(customer);
+        return customer;
     }
 }
