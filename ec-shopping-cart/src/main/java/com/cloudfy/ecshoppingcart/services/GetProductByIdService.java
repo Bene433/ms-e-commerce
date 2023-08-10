@@ -13,6 +13,6 @@ public class GetProductByIdService {
 
     public Product findProductById(Long id){
         Product product = productFeignClient.findProductById(id).getBody();
-        return new Product(product.getId(), product.getName(),product.getDescription(),product.getPrice());
+        return new Product(product.getId(), product.getName(),product.getPrice());
     }
 }

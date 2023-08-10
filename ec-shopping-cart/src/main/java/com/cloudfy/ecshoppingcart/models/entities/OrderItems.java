@@ -14,10 +14,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class OrderItems implements Serializable {
     private static final long serialVersion = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long itemId;
-    private Double price;
-    private Integer quantity;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "product_id")
+    private Product product;
+    private Integer Quantity;
 }
