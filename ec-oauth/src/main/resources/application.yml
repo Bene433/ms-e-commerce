@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: ec-oauth
+#Server config
+server:
+  port: ${PORT:0}
+#Eureka client
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
