@@ -23,6 +23,10 @@ spring:
           uri: lb://ec-shopping-cart
           predicates:
             - Path=/order/**
+        - id: ec-oauth
+          uri: lb://ec-oauth
+          predicates:
+            - Path=/oauth/**
 #Server config
 server:
   port: 7000
