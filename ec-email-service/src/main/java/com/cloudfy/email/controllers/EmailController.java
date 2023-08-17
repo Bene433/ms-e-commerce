@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 @RestController
-@RequestMapping(value = "/email/send")
+@RequestMapping(value = "/email")
 public class EmailController {
 
     @Autowired
     private EmailService service;
 
-    @PostMapping
+    @PostMapping(value = "/send")
     public ResponseEntity<EmailEntity> sendingEmail(@RequestBody @Valid EmailDTO data){
         EmailEntity email = service.sendEmail(data);
         return new ResponseEntity<>(email, HttpStatus.CREATED);
