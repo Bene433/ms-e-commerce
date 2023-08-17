@@ -11,8 +11,6 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "tb_email")
-@AllArgsConstructor
-@NoArgsConstructor
 public class EmailEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +22,6 @@ public class EmailEntity {
     @Column(columnDefinition = "TEXT")
     private String text;
     private LocalDateTime sendDateEmail;
-    private StatusEmail statusEmail;
+    private StatusEmail status;
 
 }
