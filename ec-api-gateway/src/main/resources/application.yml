@@ -27,6 +27,8 @@ spring:
           uri: lb://ec-oauth
           predicates:
             - Path=/oauth/**
+          ouath:
+            sensitive-headers: Cookie,Set-Cookie
 #Server config
 server:
   port: 7000
