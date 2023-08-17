@@ -3,6 +3,7 @@ package com.cloudfy.ecproduct.controllers;
 import com.cloudfy.ecproduct.models.dto.ProductDTO;
 import com.cloudfy.ecproduct.models.entities.Product;
 import com.cloudfy.ecproduct.services.UpdateProductSerivce;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -18,7 +19,8 @@ public class UpdateProductController {
 
     @PutMapping(value = "/{id}")
     public ResponseEntity<Product> update(@RequestBody ProductDTO productDTO, @PathVariable Long id){
-        Product product = serivce.fromDTO(productDTO);
+        Product product = new Product();
+        BeanUtils.copyProperties(productDTO, product);
         product.setId(id);
         serivce.update(product);
         return ResponseEntity.noContent().build();

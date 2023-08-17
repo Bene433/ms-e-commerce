@@ -29,8 +29,4 @@ public class UpdateProductSerivce {
         Product product = repository.findById(id).get();
         return product;
     }
-
-    public Product fromDTO(ProductDTO productDTO){
-        return new Product(productDTO.getId(), productDTO.getName(),productDTO.getDescription(),productDTO.getPrice(),productDTO.getQuantity());
-    }
 }

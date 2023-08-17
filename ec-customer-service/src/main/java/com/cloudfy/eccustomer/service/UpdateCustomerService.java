@@ -29,8 +29,4 @@ public class UpdateCustomerService {
         Customer customer = repository.findById(id).get();
         return customer;
     }
-
-    public Customer fromDTO(CustomerDTO data){
-        return new Customer(data.getId(),data.getName(),data.getEmail(),data.getCellPhone(),data.getPassword());
-    }
 }
