@@ -17,5 +17,4 @@ public class EmailDTO {
 
     @NotBlank
     private String emailTo;
-
 }
