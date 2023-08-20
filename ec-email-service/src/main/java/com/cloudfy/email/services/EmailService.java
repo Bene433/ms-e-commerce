@@ -29,10 +29,10 @@ public class EmailService {
         email.setSendDateEmail(LocalDateTime.now());
         try{
             SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom(email.getEmailFrom());
+            message.setFrom("matheusbenediht.smtp@gmail.com");
             message.setTo(email.getEmailTo());
-            message.setSubject(email.getSubject());
-            message.setText(email.getText());
+            message.setSubject("Seja bem vindo a nossa loja");
+            message.setText("Seja bem vindo a nossa loja");
             emailSender.send(message);
 
             email.setStatus(StatusEmail.SENT);

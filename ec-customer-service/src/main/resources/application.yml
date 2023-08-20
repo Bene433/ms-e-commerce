@@ -5,7 +5,8 @@ spring:
     import: "configserver:"
   profiles:
     active: test
-#Server config
+  rabbitmq:
+    addresses: amqps://qpeifuse:4245p7Fy74uD3g0ZU5B1axe_nQDUVhOG@woodpecker.rmq.cloudamqp.com/qpeifuse
 server:
   port: ${PORT:0}
 #Eureka config

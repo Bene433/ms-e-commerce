@@ -16,16 +16,6 @@ import java.time.LocalDateTime;
 public class EmailDTO {
 
     @NotBlank
-    private String ownerRef;
-    @NotBlank
-    @Email
-    private String emailFrom;
-    @Email
-    @NotBlank
     private String emailTo;
-    @NotBlank
-    private String subject;
-    @NotBlank
-    private String text;
 
 }
