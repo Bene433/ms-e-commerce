@@ -1,8 +1,12 @@
 package com.cloudfy.email.config.messaging;
 
 import org.springframework.amqp.core.Queue;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,7 +18,17 @@ public class RabbitMQConfig {
 
     @Bean
     public Queue queue(){
-        return new Queue(queue, true);
+        return new Queue(queue);
+    }
+
+    @Bean
+    public RabbitAdmin rabbitAdmin(ConnectionFactory connectionFactory){
+        return new RabbitAdmin(connectionFactory);
+    }
+
+    @Bean
+    public ApplicationListener<ApplicationReadyEvent> applicationReadyEventApplicationListener(RabbitAdmin admin){
+        return event -> admin.initialize();
     }
 
     @Bean
