@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
 
 @Controller
 @RestController
@@ -22,6 +25,7 @@ public class RegisterOrderController {
     @PostMapping
     public ResponseEntity<Order> registerOrder(@RequestBody OrderRequest orderRequest){
         Order order = service.registerOrder(orderRequest);
-        return ResponseEntity.ok().body(order);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(order.getId()).toUri();
+        return ResponseEntity.created(uri).build();
     }
 }
