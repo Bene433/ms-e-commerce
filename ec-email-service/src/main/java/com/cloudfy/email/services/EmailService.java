@@ -31,8 +31,10 @@ public class EmailService {
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom("matheusbenediht.smtp@gmail.com");
             message.setTo(email.getEmailTo());
-            message.setSubject("Seja bem vindo a nossa loja");
-            message.setText("Seja bem vindo a nossa loja");
+            message.setSubject("Seu cadastro foi concluído com sucesso.");
+            message.setText("É com grande alegria que lhe damos as boas-vindas à nossa comunidade no [Nome do E-commerce]! Agradecemos sinceramente por ter escolhido se cadastrar conosco e confiar em nossos produtos e serviços. Estamos ansiosos para proporcionar a você uma experiência única de compras online.\n" +
+                    "\n" +
+                    "Seu cadastro foi concluído com sucesso, e agora você faz parte de nossa plataforma, onde encontrará uma ampla seleção de produtos incríveis, promoções especiais e um atendimento dedicado para tornar sua jornada de compras ainda mais satisfatória.");
             emailSender.send(message);
 
             email.setStatus(StatusEmail.SENT);
